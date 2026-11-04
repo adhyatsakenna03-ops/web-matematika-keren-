@@ -1,0 +1,94 @@
+body {
+    background-color: lightblue;
+    min-height: 100vh;
+    overflow-y: auto;
+    margin: 0;
+    padding: 20px 0;
+    font-family: sans-serif;
+}
+
+h1 {
+    color: navy;
+}
+
+button {
+    background-color: blue;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.container {
+    background-color: white;
+    margin: auto;
+    width: 90%;
+    max-width: 900px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    box-sizing: border-box;
+    height: auto;
+    overflow: visible;
+}
+
+.hero-layout {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.content-box {
+    flex: 1;
+}
+
+.gambar-box {
+    width: 220px;
+    height: 220px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    margin: 15px 0;
+}
+
+.gambar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.container button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@media (max-width: 700px) {
+    .hero-layout {
+        flex-direction: column;
+    }
+
+    .gambar-box {
+        width: 100%;
+        max-width: 260px;
+    }
+}

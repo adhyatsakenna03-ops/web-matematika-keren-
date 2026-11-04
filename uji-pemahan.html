@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pengujian pemahaman materi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <button onclick="window.location.href='index.html'">kembali ke halaman utama</button>
+        <h1>uji pemahaman EDUVERSE</h1>
+        <h1>silahkan mengarjakan</h1>
+        <h2>Soal 1</h2>
+        <p>Ibu mempunyai persediaan gula sebanyak 3/4 kg. Ia membeli lagi 1/2 kg gula di warung. Berapa kg total gula yang dimiliki Ibu sekarang?</p>
+        
+        <div class="quiz-options">
+            <button onclick="cekJawaban(1, 'salah')">A. 2/6 kg</button>
+            <button onclick="cekJawaban(1, 'benar')">B. 5/4 kg (atau 1 1/4 kg)</button>
+            <button onclick="cekJawaban(1, 'salah')">C. 3/6 kg</button>
+            <button onclick="cekJawaban(1, 'salah')">D. 2/4 kg</button>
+        </div>
+        <p id="hasil-quiz-1" style="font-weight: bold; margin-top: 15px;"></p>
+
+        <hr>
+
+        <h2>Soal 2</h2>
+        <p>2. Kenna memiliki uang dua puluh ribu rupiah sebanyak dua lembar dan dibelanjakan sebanyak 12.500 rupiah. Berapa kembalian yang diterima Kenna?</p>
+        
+        <div class="quiz-options">
+            <button onclick="cekJawaban(2, 'salah')">A. 50.000</button>
+            <button onclick="cekJawaban(2, 'benar')">B. 27.500</button>
+            <button onclick="cekJawaban(2, 'salah')">C. 20.000</button>
+            <button onclick="cekJawaban(2, 'salah')">D. 12.500</button>
+        </div>
+        <p id="hasil-quiz-2" style="font-weight: bold; margin-top: 15px;"></p>
+    </div>
+    <button onclick="window.location.href='uji-pemahan-2.html'">
+        lanjut ke halaman berikutnya
+    </button>
+
+    <!-- Kode JavaScript dimasukkan langsung di sini -->
+    <script>
+        function cekJawaban(nomorSoal, status) {
+            const teksHasil = document.getElementById("hasil-quiz-" + nomorSoal);
+            
+            if (!teksHasil) return;
+
+            if (nomorSoal === 1) {
+                if (status === 'benar') {
+                    teksHasil.textContent = "🎉 Luar biasa! Jawaban Anda Benar (5/4 atau 1 1/4 kg).";
+                    teksHasil.style.color = "green";
+                } else {
+                    teksHasil.textContent = "❌ Belum tepat. Coba ingat kembali cara menyamakan penyebut penjumlahan pecahan!";
+                    teksHasil.style.color = "red";
+                }
+            } else if (nomorSoal === 2) {
+                if (status === 'benar') {
+                    teksHasil.textContent = "🎉 Benar! (2 × 20.000 = 40.000. Kembalian: 40.000 - 12.500 = 27.500).";
+                    teksHasil.style.color = "green";
+                } else {
+                    teksHasil.textContent = "❌ Belum tepat. Hitung total uang Kenna (2 lembar 20.000) dikurangi 12.500!";
+                    teksHasil.style.color = "red";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

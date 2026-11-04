@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>halaman ke dua</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <button onclick="window.location.href='uji-pemahan-1.html'">
+                kembali ke halaman pertama
+        </button>
+        <div class="container">
+            <p>3. Ibu memiliki dua lembar uang seratus ribu. Ia membelanjakan baju seharga Rp98.000 dan celana seharga Rp34.000. Berapa sisa uang Ibu?</p>
+            <div class="quiz-options">
+                <button onclick="cekJawaban(3, 'salah')">A. Rp100.000</button>
+                <button onclick="cekJawaban(3, 'salah')">B. Rp102.000</button>
+                <button onclick="cekJawaban(3, 'benar')">C. Rp68.000</button>
+                <button onclick="cekJawaban(3, 'salah')">D. Rp62.000</button>
+            </div>
+            <p id="hasil-quiz-3" aria-live="polite"></p>
+        
+
+        <hr>
+
+        <p>4. Seorang pedagang memiliki 200 kg beras. Ia menjual 132 kg beras. Berapa sisa beras yang dimiliki pedagang?</p>
+        <div class="quiz-options">
+            <button onclick="cekJawaban(4, 'benar')">A. 68 kg</button>
+            <button onclick="cekJawaban(4, 'salah')">B. 72 kg</button>
+            <button onclick="cekJawaban(4, 'salah')">C. 132 kg</button>
+            <button onclick="cekJawaban(4, 'salah')">D. 200 kg</button>
+        </div>
+        <p id="hasil-quiz-4" aria-live="polite"></p>
+        <button onclick="window.location.href='uji-pemahan-3.html'">
+            kembali ke halaman pertama
+        </button>
+        </div>
+        <script>
+            function cekJawaban(nomorSoal, status) {
+                const teksHasil = document.getElementById("hasil-quiz-" + nomorSoal);
+                if (!teksHasil) return;
+
+                if (nomorSoal === 3) {
+                    if (status === "benar") {
+                        teksHasil.textContent = "🎉 Luar biasa! Jawaban Anda benar. Sisa uang Ibu adalah Rp68.000.";
+                        teksHasil.style.color = "green";
+                    } else {
+                        teksHasil.textContent = "❌ Belum tepat. Kurangi total belanja Rp132.000 dari Rp200.000.";
+                        teksHasil.style.color = "red";
+                    }
+                } else if (nomorSoal === 4  ) {
+                    if (status === "benar") {
+                        teksHasil.textContent = "🎉 Benar! Sisa beras yang dimiliki pedagang adalah 68 kg.";
+                        teksHasil.style.color = "green";
+                    } else {
+                        teksHasil.textContent = "❌ Belum tepat. Kurangi total beras 200 kg dengan yang terjual 132 kg.";
+                        teksHasil.style.color = "red";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
